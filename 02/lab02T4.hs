@@ -1,4 +1,4 @@
-import Prelude hiding (zip)
+import Test.QuickCheck
 -- CONTRACT
 square :: Int -> Int
 
