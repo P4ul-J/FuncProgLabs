@@ -35,3 +35,12 @@ getMax :: (Ord a) => [a] -> a
 getMax = undefined
 det :: (Num a) => [[a]] -> a
 det = undefined
+
+
+--Task 6
+{-
+tFlip :: (a -> b -> c) -> (b -> a -> c)
+tFlip f = g
+  where g a b = f a b
+
+  -}
