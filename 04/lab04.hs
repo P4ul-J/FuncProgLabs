@@ -12,7 +12,7 @@ factors n = [x | x <- [1..n], n `mod` x == 0]
 prime :: Int -> Bool
 prime n = factors n == [1,n]
 
-numprimes n = [x | x <-[1..n], prime x]
+numprimes n = length [x | x <-[1..n], prime x]
 
 --Task 4
 scalarProd :: [Int] -> [Int] -> Int
