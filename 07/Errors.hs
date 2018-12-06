@@ -30,5 +30,5 @@ ex02 = Course "Prof. Brain" (Title "Esoteric Programming Language") [Lecture, Ex
 
 labTopics :: Course EventDescription -> [String]
 labTopics a = [ s | Lab (Lab2 s _) <- giveMeAllLabs a]
-
+--labTopics a = [topic s | s <- giveMeAllLabs a]
 
