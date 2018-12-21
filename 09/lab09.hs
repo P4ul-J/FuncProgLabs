@@ -20,11 +20,12 @@ xs `isSubsetOf` ys = sort (nub xs) `helper` sort (nub ys)
 data JSON = JSEmpty | JSString String| JSNumber Double | JSBool Bool| JSArray [JSON] | JSObject [(String, JSON)]
 
 --Task 7
-insert :: x -> Set x -> Set x
+insert :: Ord x => x -> Set x -> Set x
 
-member :: x -> Set x -> Bool
+member :: Ord x => x -> Set x -> Bool
 member _ Leaf = False
 member e xs
         | elem xs == e = True
         | elem xs > e = member e (left xs)
         |otherwise = member e (right xs)
+
