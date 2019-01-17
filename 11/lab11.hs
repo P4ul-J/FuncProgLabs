@@ -14,4 +14,3 @@ sumTwo (a:_:c:_:ds)
         | a + c < 0 = a + c + (trace ("call with " ++ show (a) ++ " + " ++ show(c) ++ " = " ++ " < 0") (sumTwo ds))
         | otherwise = trace (show(a) ++ " + " ++ show (c) ++ " not smaller than 0 anymore") 0
 
--- Task 3
