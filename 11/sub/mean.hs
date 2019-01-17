@@ -4,6 +4,9 @@ import Control.Monad
 import Control.Exception
 import System.Exit
 import Data.Char
+import Data.List (foldl')
+data Pair = Pair {-# UNPACK #-}!Int {-# UNPACK #-}!Int
+
 
 -------------------------
 mean :: [Integer] -> Integer
@@ -13,11 +16,19 @@ mean xs = mysum xs `div` fromIntegral (length xs)
         where
         helper v [] = v
         helper v (x:xs) = helper (v + x) xs
+
+
 -------------------------
 
 -------------------------
 meanOpt :: [Integer] -> Integer
-meanOpt = undefined
+meanOpt xs = mysum xs 
+    where
+    mysum = helper 0 0
+        where
+        helper v l [] = v `div` l
+        helper v l (x:xs) = ((helper $! (v + x)) $! (l+1)) xs
+
 -------------------------
 
 
