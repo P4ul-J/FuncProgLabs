@@ -4,10 +4,17 @@ import Control.Monad
 import Control.Exception
 import System.Exit
 import Data.Char
-import Data.List (foldl')
-data Pair = Pair {-# UNPACK #-}!Int {-# UNPACK #-}!Int
 
+-------------------------
+{-
+use:
+ghc -fforce-recomp -prof -rtsopts --makemean
 
+./mean 2500000 slow +RTS -K1000M -s
+    using the mean function
+./mean 2500000 fast +RTS -K1000M -s
+    using the meanOpt function
+-}
 -------------------------
 mean :: [Integer] -> Integer
 mean xs = mysum xs `div` fromIntegral (length xs)
