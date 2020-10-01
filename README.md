@@ -5,3 +5,4 @@ In the individual folders you can find our source code as well as the accompanyi
 Notice that our implementation is not complete. Especially non-mandatory tasks were not added during some sessions.
 
 The code was developed and tested using GHCi, version 8.6.4
+See [http://www.haskell.org/ghc] for more.
